@@ -44,7 +44,7 @@ class CameraViewNativeBridge extends Reference:
 	func _on_picture_taken_(camera_error_code, data, detectedFacesExtra):
 		var _detectedFacesExtra = ParameterSerializer.unserialize(detectedFacesExtra);
 
-		if camera_error_code != __node__.OK:
+		if camera_error_code != OK:
 			__node__.emit_signal("picture_taken", camera_error_code, null, null);
 		else:
 			var image : Image = Image.new();
